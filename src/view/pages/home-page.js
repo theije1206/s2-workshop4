@@ -25,6 +25,7 @@ const students = [
   }
 ];
 
+
 const studentTemplate = document.querySelector('#student-template');
 const studentList = document.querySelector('#students');
 

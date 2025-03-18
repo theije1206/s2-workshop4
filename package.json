@@ -4,6 +4,7 @@
     "vite": "^6.2.2"
   },
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "backend": "json-server --watch public/students.json --port 3001"
   }
 }

@@ -1,0 +1,39 @@
+{
+  "students": [
+    {
+      "name": "Jens",
+      "studentnr": 123456,
+      "photo": "https://randomuser.me/api/portraits/lego/1.jpg",
+      "gender": "other",
+      "id": "7a04"
+    },
+    {
+      "name": "Sanne",
+      "studentnr": 654321,
+      "photo": "https://randomuser.me/api/portraits/lego/9.jpg",
+      "gender": "female",
+      "id": "836a"
+    },
+    {
+      "name": "Hatice",
+      "studentnr": 654321,
+      "photo": "https://randomuser.me/api/portraits/lego/9.jpg",
+      "gender": "female",
+      "id": "8da0"
+    },
+    {
+      "name": "Remy",
+      "studentnr": 654321,
+      "photo": "https://randomuser.me/api/portraits/lego/2.jpg",
+      "gender": "male",
+      "id": "2964"
+    },
+    {
+      "id": "fb82",
+      "name": "Pietje",
+      "studentnr": "12234",
+      "photo": "https://randomuser.me/api/portraits/lego/3.jpg",
+      "gender": "male"
+    }
+  ]
+}

@@ -9,5 +9,26 @@
 </head>
 
 <body>
+  <h1>Students</h1>
+  <ul id="students"></ul>
+
+  <form id="student-form">
+    <input type="text" name="id" aria-label="student-id" hidden />
+    <input type="text" id="student-name" name="name" placeholder="Student Name" />
+    <input type="text" id="student-nr" name="studentnr" placeholder="Student Number" />
+    <input type="text" id="student-img-url" name="photo" placeholder="Student Image URL" value="https://randomuser.me/api/portraits" />
+    <input type="radio" name="gender" id="male" value="male" /><label for="male">Male</label>
+    <input type="radio" name="gender" id="female" value="female" /><label for="female">Female</label>
+    <input type="radio" name="gender" id="other" value="other" /><label for="other">Other</label>
+    <button type="submit">Add Student</button>
+  </form>
+
+  <template id="student-template">
+    <li>
+      <h1>Student Name</h1>
+      <p class="studentnr"></p>
+      <img class="studentimg" src="" alt="student image">
+    </li>
+  </template>
 </body>
 </html>

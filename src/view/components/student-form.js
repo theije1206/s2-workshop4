@@ -25,6 +25,24 @@ function addStudent(student) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      location.reload();
+    });
+}
+
+function updateStudent(student) {
+  const url = `http://localhost:3001/students/${student.id}`;
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(student),
+  };
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      location.reload();
     });
 }
 
@@ -33,8 +51,14 @@ function formSubmitHandler(event) {
   console.log('Form submitted');
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
+
   console.log(data);
-  // addStudent(data);
+
+  if (data.id) {
+    updateStudent(data);
+  } else {
+    addStudent(data);
+  }
 }
 
 formElement.addEventListener('submit', formSubmitHandler);

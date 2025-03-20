@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Document</title>
-  <script type="module" src="./src/view/pages/home-page.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+    <script type="module" src="./src/view/pages/home-page.js"></script>
+  </head>
 
-<body>
-  <h1>Students</h1>
-  <ul id="students"></ul>
+  <body>
+    <h1>Students</h1>
+    <ul id="students"></ul>
 
-  <form id="student-form">
-    <input type="text" name="id" aria-label="student-id" hidden />
-    <input type="text" id="student-name" name="name" placeholder="Student Name" />
-    <input type="text" id="student-nr" name="studentnr" placeholder="Student Number" />
-    <input type="text" id="student-img-url" name="photo" placeholder="Student Image URL" value="https://randomuser.me/api/portraits" />
-    <input type="radio" name="gender" id="male" value="male" /><label for="male">Male</label>
-    <input type="radio" name="gender" id="female" value="female" /><label for="female">Female</label>
-    <input type="radio" name="gender" id="other" value="other" /><label for="other">Other</label>
-    <button type="submit">Add Student</button>
-  </form>
+    <form id="student-form">
+      <input type="text" name="id" aria-label="student-id" hidden />
+      <label for="student-name">Student Name</label>
+      <input type="text" id="student-name" name="name" placeholder="Student Name" />
+      <label for="student-nr">Student Number</label>
+      <input type="text" id="student-nr" name="studentnr" placeholder="Student Number" />
+      <label for="student-img-url">Student Image URL</label>
+      <input
+        type="text"
+        id="student-img-url"
+        name="photo"
+        placeholder="Student Image URL"
+        value="https://randomuser.me/api/portraits"
+      />
+      <fieldset>
+        <legend>Student gender</legend>
+        <input type="radio" name="gender" id="male" value="male" /><label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female" /><label for="female">Female</label>
+        <input type="radio" name="gender" id="other" value="other" /><label for="other">Other</label>
+      </fieldset>
+      <button type="submit">Add Student</button>
+    </form>
 
-  <template id="student-template">
-    <li>
-      <h1>Student Name</h1>
-      <p class="studentnr"></p>
-      <img class="studentimg" src="" alt="student image">
-    </li>
-  </template>
-</body>
+    <template id="student-template">
+      <li>
+        <h1>Student Name</h1>
+        <p class="studentnr"></p>
+        <img class="studentimg" src="" alt="student image" />
+        <p class="delete">X</p>
+      </li>
+    </template>
+  </body>
 </html>

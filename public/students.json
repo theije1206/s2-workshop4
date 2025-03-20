@@ -22,17 +22,24 @@
       "id": "8da0"
     },
     {
-      "name": "Remy",
-      "studentnr": 654321,
-      "photo": "https://randomuser.me/api/portraits/lego/2.jpg",
-      "gender": "male",
-      "id": "2964"
-    },
-    {
       "id": "fb82",
       "name": "Pietje",
       "studentnr": "12234",
       "photo": "https://randomuser.me/api/portraits/lego/3.jpg",
+      "gender": "male"
+    },
+    {
+      "id": "",
+      "name": "Frits",
+      "studentnr": "654321",
+      "photo": "https://randomuser.me/api/portraits/lego/3.jpg",
+      "gender": "other"
+    },
+    {
+      "id": "",
+      "name": "Frits",
+      "studentnr": "654321",
+      "photo": "https://randomuser.me/api/portraits/lego/8.jpg",
       "gender": "male"
     }
   ]

@@ -1,19 +1,13 @@
+const backend_url = 'http://localhost:3001/students';
+
 const formElement = document.querySelector('form');
 
 function editStudentHandler(event) {
-  console.log(event.detail);
-  // update form with student data
-  const student = event.detail;
-  formElement.name.value = student.name;
-  formElement.studentnr.value = student.studentnr;
-  formElement.photo.value = student.photo;
-  formElement.id.value = student.id;
-  formElement.querySelector(`[name=gender][value=${student.gender}]`).checked = true;
-  formElement.querySelector('button[type=submit]').textContent = 'Update student';
+  console.log('Edit student', event.detail);
+  render(event.detail);
 }
 
 function addStudent(student) {
-  const url = 'http://localhost:3001/students';
   const options = {
     method: 'POST',
     headers: {
@@ -21,7 +15,7 @@ function addStudent(student) {
     },
     body: JSON.stringify(student),
   };
-  fetch(url, options)
+  fetch(backend_url, options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -30,7 +24,7 @@ function addStudent(student) {
 }
 
 function updateStudent(student) {
-  const url = `http://localhost:3001/students/${student.id}`;
+  const url = `${backend_url}/${student.id}`;
   const options = {
     method: 'PUT',
     headers: {
@@ -61,5 +55,23 @@ function formSubmitHandler(event) {
   }
 }
 
+function render(student = {}) {
+  console.log('Render form', student);
+  formElement.name.value = student.name || '';
+  formElement.studentnr.value = student.studentnr || '';
+  formElement.photo.value = student.photo || '';
+  formElement.id.value = student.id || '';
+  formElement.querySelector(`[name=gender][value=${student?.gender || 'other'}]`).checked = true;
+
+  if (!student.id) {
+    console.log('student is empty');
+    formElement.querySelector('button[type=submit]').textContent = 'Add student';
+  } else {
+    console.log('student is not empty');
+    formElement.querySelector('button[type=submit]').textContent = 'Update student';
+  }
+}
+
+render();
 formElement.addEventListener('submit', formSubmitHandler);
 document.addEventListener('edit-student', editStudentHandler);

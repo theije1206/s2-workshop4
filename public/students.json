@@ -29,17 +29,10 @@
       "gender": "male"
     },
     {
-      "id": "",
+      "id": "1d4c",
       "name": "Frits",
-      "studentnr": "654321",
-      "photo": "https://randomuser.me/api/portraits/lego/3.jpg",
-      "gender": "other"
-    },
-    {
-      "id": "",
-      "name": "Frits",
-      "studentnr": "654321",
-      "photo": "https://randomuser.me/api/portraits/lego/8.jpg",
+      "studentnr": "54321",
+      "photo": "https://randomuser.me/api/portraits/lego/4.jpg",
       "gender": "male"
     }
   ]

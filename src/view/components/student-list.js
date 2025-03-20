@@ -1,7 +1,19 @@
+const backend_url = 'http://localhost:3001/students';
+
 const studentTemplate = document.querySelector('#student-template');
 const studentList = document.querySelector('#students');
 
 let students = [];
+
+function getStudents() {
+  return fetch(backend_url)
+    .then((response) => response.json())
+    .then((data) => {
+      students = [...data];
+      console.log(students);
+      render();
+    });
+}
 
 function editStudentEvent(student, event) {
   console.log(event);
@@ -17,7 +29,7 @@ function deleteStudentEvent(student, event) {
   console.log('Delete student', student);
   event.stopPropagation();
 
-  fetch(`http://localhost:3001/students/${student.id}`, {
+  fetch(`${backend_url}/${student.id}`, {
     method: 'DELETE',
   }).then(() => {
     getStudents();
@@ -44,16 +56,6 @@ function render() {
 
     studentList.appendChild(studentElement);
   });
-}
-
-function getStudents() {
-  return fetch('http://localhost:3001/students')
-    .then((response) => response.json())
-    .then((data) => {
-      students = [...data];
-      console.log(students);
-      render();
-    });
 }
 
 render();

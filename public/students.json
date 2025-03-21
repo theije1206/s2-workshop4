@@ -8,11 +8,11 @@
       "id": "7a04"
     },
     {
-      "name": "Sanne",
-      "studentnr": 654321,
+      "id": "836a",
+      "name": "Johanne",
+      "studentnr": "654321",
       "photo": "https://randomuser.me/api/portraits/lego/9.jpg",
-      "gender": "female",
-      "id": "836a"
+      "gender": "female"
     },
     {
       "name": "Hatice",
@@ -24,6 +24,13 @@
     {
       "id": "fb82",
       "name": "Pietje",
+      "studentnr": "12234",
+      "photo": "https://randomuser.me/api/portraits/lego/3.jpg",
+      "gender": "male"
+    },
+    {
+      "id": "6040",
+      "name": "Henkje",
       "studentnr": "12234",
       "photo": "https://randomuser.me/api/portraits/lego/3.jpg",
       "gender": "male"

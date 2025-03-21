@@ -5,19 +5,22 @@ const studentList = document.querySelector('#students');
 
 let students = [];
 
+// --- function declarations ---
+
 function getStudents() {
   return fetch(backend_url)
     .then((response) => response.json())
     .then((data) => {
       students = [...data];
-      console.log(students);
       render();
     });
 }
 
 function editStudentEvent(student, event) {
-  console.log(event);
-  console.log('Student clicked', student);
+  console.log('editStudentEvent event:', event);
+  console.log('editStudentEvent student', student);
+
+  // create a new custom event to inform the student-form component that we want to edit a student
   const editStudentEvent = new CustomEvent('edit-student', {
     detail: student,
   });
@@ -25,8 +28,10 @@ function editStudentEvent(student, event) {
 }
 
 function deleteStudentEvent(student, event) {
-  console.log(event);
-  console.log('Delete student', student);
+  console.log('deleteStudentEvent event', event);
+  console.log('deleteStudentEvent student', student);
+  // because the event is triggered within the li element, we need to stop the event from bubbling up to the li element
+  // otherwise the editStudentEvent will be triggered as well
   event.stopPropagation();
 
   fetch(`${backend_url}/${student.id}`, {
@@ -56,6 +61,8 @@ function render() {
     studentList.appendChild(studentElement);
   });
 }
+
+// --- student-list main ---
 
 render();
 getStudents();

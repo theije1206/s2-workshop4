@@ -51,7 +51,6 @@ function render() {
     photo.alt = student.name;
 
     studentElement.querySelector('.delete').addEventListener('click', (event) => deleteStudentEvent(student, event));
-
     studentElement.querySelector('li').addEventListener('click', (event) => editStudentEvent(student, event));
 
     studentList.appendChild(studentElement);

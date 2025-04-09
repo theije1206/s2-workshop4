@@ -79,3 +79,4 @@ function render(student = {}) {
 render();
 formElement.addEventListener('submit', formSubmitHandler);
 document.addEventListener('edit-student', editStudentHandler);
+// formElement.email.value = student.email || '';

@@ -1,24 +1,27 @@
 {
   "students": [
     {
+      "id": "7a04",
       "name": "Jens",
-      "studentnr": 123456,
+      "studentnr": "123456",
+      "email": "Jens.1234567@student.hu.nl",
       "photo": "https://randomuser.me/api/portraits/lego/1.jpg",
-      "gender": "other",
-      "id": "7a04"
+      "gender": "other"
     },
     {
       "id": "836a",
       "name": "Johanne",
       "studentnr": "654321",
       "photo": "https://randomuser.me/api/portraits/lego/9.jpg",
+      "email": "Johanne.654321@student.hu.nl",
       "gender": "female"
     },
     {
       "name": "Hatice",
-      "studentnr": 654321,
+      "studentnr": "654321",
       "photo": "https://randomuser.me/api/portraits/lego/9.jpg",
       "gender": "female",
+      "email": "Hatice.654321@student.hu.nl",
       "id": "8da0"
     },
     {
@@ -26,6 +29,7 @@
       "name": "Pietje",
       "studentnr": "12234",
       "photo": "https://randomuser.me/api/portraits/lego/3.jpg",
+      "email": "Pietje.12234@student.hu.nl",
       "gender": "male"
     },
     {
@@ -33,6 +37,7 @@
       "name": "Victor",
       "studentnr": "12234",
       "photo": "https://randomuser.me/api/portraits/lego/4.jpg",
+      "email": "Victor.12234@student.hu.nl",
       "gender": "male"
     }
   ]

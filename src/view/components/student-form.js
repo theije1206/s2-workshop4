@@ -1,7 +1,7 @@
 const backend_url = 'http://localhost:3001/students';
 const formElement = document.querySelector('form');
 
-// --- function decalarations ---
+// --- function declarations ---
 
 function editStudentHandler(event) {
   console.log('editStudentHandler event.details:', event.detail);
@@ -64,6 +64,7 @@ function render(student = {}) {
   formElement.name.value = student.name || '';
   formElement.studentnr.value = student.studentnr || '';
   formElement.photo.value = student.photo || '';
+  formElement.email.value = student.email || '';  
   formElement.id.value = student.id || '';
   formElement.querySelector(`[name=gender][value=${student?.gender || 'other'}]`).checked = true;
 
@@ -79,4 +80,3 @@ function render(student = {}) {
 render();
 formElement.addEventListener('submit', formSubmitHandler);
 document.addEventListener('edit-student', editStudentHandler);
-// formElement.email.value = student.email || '';

@@ -9,7 +9,7 @@ let students = [];
 
 function getStudents() {
   return fetch(backend_url)
-    .then((response) => response.json())
+    .then(response => response.json())
     .then((data) => {
       students = [...data];
       render();
@@ -26,6 +26,29 @@ function editStudentEvent(student, event) {
   });
   document.dispatchEvent(editStudentEvent);
 }
+
+function vergelijkStudentEvent() {
+  let studentMap = {};
+  let dubbeleStudenten = {};
+
+  students.forEach((student) => {
+    studentMap[student.studentnr] = (studentMap[student.studentnr] || []).concat([student]);
+  });
+
+  for (let studentnr in studentMap) {
+    if (studentMap[studentnr].length > 1) {
+      dubbeleStudenten[studentnr] = studentMap[studentnr];
+    }
+  }
+
+  console.log("Dit zijn de dubbele studenten:", dubbeleStudenten);
+}
+  
+
+  // studentMap: checken welke entries in deze map een Array hebben van lengte > 1
+  // dan => console.log hiervan.
+
+
 
 function deleteStudentEvent(student, event) {
   console.log('deleteStudentEvent event', event);
@@ -50,6 +73,7 @@ function render() {
     const studentnr = studentElement.querySelector('.studentnr');
     const photo = studentElement.querySelector('.studentimg');
 
+
     name.textContent = student.name;
     studentnr.textContent = student.studentnr;
     photo.src = `${student.photo}`;
@@ -57,11 +81,12 @@ function render() {
 
     studentElement.querySelector('.delete').addEventListener('click', (event) => deleteStudentEvent(student, event));
     studentElement.querySelector('li').addEventListener('click', (event) => editStudentEvent(student, event));
-
+    
     studentList.appendChild(studentElement);
   });
 }
 
+document.querySelector('#compare').addEventListener('click', vergelijkStudentEvent);
 // --- student-list main ---
 
 render();
